@@ -1,0 +1,73 @@
+body {
+  background-color: dimgrey;
+  height: 600vh;
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(1.5rem, 7vw, 7rem);
+  font-family: "Pixelify Sans", monospace;
+  text-align: center;
+  padding: clamp(0.25rem, 0, 5vw, 1rem) 0rem;
+}
+
+#trailer {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 100000;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+body:hover > #trailer {
+  opacity: 1;
+}
+
+#menu {
+  display: flex;
+  margin-top: 20vh;
+  align-items: center;
+}
+
+.menu-item {
+  color: white;
+  font-family: "Pixelify Sans", monospace;
+  font-size: clamp(1rem, 6vw, 6rem);
+
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.25rem, 0, 5vw, 1rem) 0rem;
+}
+
+#menu-items {
+  margin-left: clamp(4rem, 20vw, 48rem);
+}
+
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+.animoi.animate {
+  animation: yourAnimation 1s ease forwards;
+}
+
+h2 {
+  color: white;
+  font-size: clamp(1rem, 3vw, 3em);
+  font-family: "Pixelify Sans", monospace;
+  text-align: center;
+  margin-top: 100vh;
+}

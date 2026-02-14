@@ -1,24 +1,25 @@
 /* väri paletti */
 /* https://colorhunt.co/palette/e5f9bda0e4187fb414525050 */
-
+@font-face {
+  font-family: Gondens;
+  src: url("Gondens\ DEMO.otf") format("opentype");
+}
 body {
-  background-color: #121212;
-  height: 600vh;
+  background-color: #141e26;
+  height: 350vh;
   margin: 0;
 }
 
 h1 {
-  color: #f05454;
-  font-size: clamp(1.5rem, 7vw, 7rem);
-  font-family: "Abril Fatface";
+  color: #f1f0e4;
+  font-size: clamp(5rem, 10vw, 15rem);
+  font-family: "Gondens";
   text-align: center;
-  padding: clamp(0.25rem, 0, 5vw, 1rem) 0rem;
-  display: inline-block;
+  padding: clamp(1rem, 1, 1vw, 1rem) 1rem;
   text-align: center;
-  margin-left: 20%;
   text-decoration: overline underline;
-  text-underline-offset: 10px;
-  text-decoration-color: #f5f5f5;
+  text-underline-offset: 40px;
+  text-decoration-color: #9ac5d3;
 }
 
 #trailer {
@@ -48,9 +49,9 @@ body:hover > #trailer {
 }
 
 .menu-item {
-  color: #30475e;
+  color: #bca88d;
   font-family: "Abril Fatface";
-  font-size: clamp(1rem, 6vw, 6rem);
+  font-size: clamp(2rem, 5vw, 8rem);
 
   display: block;
   text-decoration: none;
@@ -88,7 +89,7 @@ body:hover > #trailer {
 #about-otsikko,
 #projects-otsikko,
 #kontakti {
-  color: #f05454;
+  color: #5d6d66;
   font-size: clamp(2rem, 6vw, 4em);
   font-family: "Abril Fatface";
   margin: 0 auto;

@@ -26,7 +26,7 @@ function scrambleText(element) {
   });
 }
 
-scrambleText(document.querySelector("h1"));
+/* scrambleText(document.querySelector("h1")); */
 
 document
   .querySelectorAll("#menu-items .menu-item")
@@ -69,20 +69,23 @@ const obserber = new IntersectionObserver((entries) => {
 }, {});
 
 document
-  .querySelector('.menu-item[data-value="ABOUT"]')
+  .querySelector('.menu-item[data-value="SKILLS"]')
   .addEventListener("click", (e) => {
     e.preventDefault();
 
-    const target = document.querySelector("#Tietoa");
-    const rect = target.getBoundingClientRect();
+    const inner = document.querySelector("#Tietoa");
+    if (!inner) return;
+    const box = inner.closest(".text-box") || inner;
+
+    const rect = box.getBoundingClientRect();
     const elementTop = rect.top + window.scrollY;
     const offset = window.innerHeight / 2 - rect.height / 2;
     const targetY = elementTop - offset;
 
-    smoothScrollTo(targetY, 1500);
+    smoothScrollToSkills(targetY, 1500);
   });
 
-function smoothScrollTo(targetY, duration) {
+function smoothScrollToSkills(targetY, duration) {
   const start = window.scrollY;
   const distance = targetY - start;
   const startTime = performance.now();
@@ -96,7 +99,6 @@ function smoothScrollTo(targetY, duration) {
         : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
     window.scrollTo(0, start + distance * ease);
-
     if (progress < 1) requestAnimationFrame(animate);
   }
 
@@ -108,16 +110,19 @@ document
   .addEventListener("click", (e) => {
     e.preventDefault();
 
-    const target = document.querySelector("#projekti");
-    const rect = target.getBoundingClientRect();
+    const inner = document.querySelector("#projekti");
+    if (!inner) return;
+    const box = inner.closest(".text-box") || inner;
+
+    const rect = box.getBoundingClientRect();
     const elementTop = rect.top + window.scrollY;
     const offset = window.innerHeight / 2 - rect.height / 2;
     const targetY = elementTop - offset;
 
-    smoothScrollTo(targetY, 1500);
+    smoothScrollToProjects(targetY, 1500);
   });
 
-function smoothScrollTo(targetY, duration) {
+function smoothScrollToProjects(targetY, duration) {
   const start = window.scrollY;
   const distance = targetY - start;
   const startTime = performance.now();
@@ -131,7 +136,6 @@ function smoothScrollTo(targetY, duration) {
         : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
     window.scrollTo(0, start + distance * ease);
-
     if (progress < 1) requestAnimationFrame(animate);
   }
 
@@ -143,16 +147,19 @@ document
   .addEventListener("click", (e) => {
     e.preventDefault();
 
-    const target = document.querySelector("#Puh");
-    const rect = target.getBoundingClientRect();
+    const inner = document.querySelector("#Puh");
+    if (!inner) return;
+    const box = inner.closest(".text-box") || inner;
+
+    const rect = box.getBoundingClientRect();
     const elementTop = rect.top + window.scrollY;
     const offset = window.innerHeight / 2 - rect.height / 2;
     const targetY = elementTop - offset;
 
-    smoothScrollTo(targetY, 1500);
+    smoothScrollToContact(targetY, 1500);
   });
 
-function smoothScrollTo(targetY, duration) {
+function smoothScrollToContact(targetY, duration) {
   const start = window.scrollY;
   const distance = targetY - start;
   const startTime = performance.now();
@@ -166,7 +173,6 @@ function smoothScrollTo(targetY, duration) {
         : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
     window.scrollTo(0, start + distance * ease);
-
     if (progress < 1) requestAnimationFrame(animate);
   }
 

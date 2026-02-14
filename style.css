@@ -19,7 +19,11 @@ h1 {
   text-align: center;
   text-decoration: overline underline;
   text-underline-offset: 40px;
-  text-decoration-color: #9ac5d3;
+  text-decoration-color: #f1f0e4;
+
+  -webkit-text-stroke: 1px #bca88d;
+  text-shadow: -4px -4px #bca88d;
+  font-weight: 600;
 }
 
 #trailer {
@@ -91,7 +95,7 @@ body:hover > #trailer {
 #kontakti {
   color: #5d6d66;
   font-size: clamp(2rem, 6vw, 4em);
-  font-family: "Abril Fatface";
+  font-family: "Abril Facefat";
   margin: 0 auto;
   line-height: 1.7;
 }

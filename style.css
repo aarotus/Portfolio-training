@@ -1,21 +1,27 @@
+/* väri paletti */
+/* https://colorhunt.co/palette/e5f9bda0e4187fb414525050 */
+
 body {
-  background-color: dimgrey;
+  background-color: #525050;
   height: 600vh;
   margin: 0;
 }
 
 h1 {
-  color: white;
+  color: rgb(43, 41, 41);
   font-size: clamp(1.5rem, 7vw, 7rem);
   font-family: "Pixelify Sans", monospace;
   text-align: center;
   padding: clamp(0.25rem, 0, 5vw, 1rem) 0rem;
+  display: inline-block;
+  text-align: center;
+  margin-left: 20%;
 }
 
 #trailer {
   height: 20px;
   width: 20px;
-  background-color: white;
+  background-color: rgb(166, 231, 166);
   border-radius: 20px;
 
   position: fixed;
@@ -39,13 +45,14 @@ body:hover > #trailer {
 }
 
 .menu-item {
-  color: white;
+  color: #a0e418;
   font-family: "Pixelify Sans", monospace;
   font-size: clamp(1rem, 6vw, 6rem);
 
   display: block;
   text-decoration: none;
   padding: clamp(0.25rem, 0, 5vw, 1rem) 0rem;
+  opacity: 0.7;
 }
 
 #menu-items {
@@ -64,10 +71,22 @@ body:hover > #trailer {
   animation: yourAnimation 1s ease forwards;
 }
 
-h2 {
-  color: white;
+#Tietoa,
+#projekti,
+#Puh {
+  color: #e5f9bd;
   font-size: clamp(1rem, 3vw, 3em);
   font-family: "Pixelify Sans", monospace;
-  text-align: center;
+  margin-left: 5vw;
+  margin-top: 0vh;
+}
+
+#about-otsikko,
+#projects-otsikko,
+#kontakti {
+  color: #7fb414;
+  font-size: clamp(1rem, 4vw, 3em);
+  font-family: "Pixelify Sans", monospace;
+  margin-left: 5vw;
   margin-top: 100vh;
 }

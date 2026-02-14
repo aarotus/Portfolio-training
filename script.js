@@ -102,3 +102,97 @@ function smoothScrollTo(targetY, duration) {
 
   requestAnimationFrame(animate);
 }
+
+document
+  .querySelector('.menu-item[data-value="PROJECTS"]')
+  .addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const target = document.querySelector("#projekti");
+    const rect = target.getBoundingClientRect();
+    const elementTop = rect.top + window.scrollY;
+    const offset = window.innerHeight / 2 - rect.height / 2;
+    const targetY = elementTop - offset;
+
+    smoothScrollTo(targetY, 1500);
+  });
+
+function smoothScrollTo(targetY, duration) {
+  const start = window.scrollY;
+  const distance = targetY - start;
+  const startTime = performance.now();
+
+  function animate(time) {
+    const elapsed = time - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease =
+      progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+    window.scrollTo(0, start + distance * ease);
+
+    if (progress < 1) requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+}
+
+document
+  .querySelector('.menu-item[data-value="CONTACT"]')
+  .addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const target = document.querySelector("#Puh");
+    const rect = target.getBoundingClientRect();
+    const elementTop = rect.top + window.scrollY;
+    const offset = window.innerHeight / 2 - rect.height / 2;
+    const targetY = elementTop - offset;
+
+    smoothScrollTo(targetY, 1500);
+  });
+
+function smoothScrollTo(targetY, duration) {
+  const start = window.scrollY;
+  const distance = targetY - start;
+  const startTime = performance.now();
+
+  function animate(time) {
+    const elapsed = time - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease =
+      progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+    window.scrollTo(0, start + distance * ease);
+
+    if (progress < 1) requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+}
+
+// sivu takaisin ylös reloadissa.
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+if (window.location.hash) {
+  history.replaceState(
+    null,
+    document.title,
+    window.location.pathname + window.location.search,
+  );
+}
+
+window.addEventListener("load", () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+});
+
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }
+});
